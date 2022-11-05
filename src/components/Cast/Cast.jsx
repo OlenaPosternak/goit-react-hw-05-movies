@@ -18,7 +18,7 @@ const Cast = () => {
 
   return (
     <div>
-      {castInfo.map(({ id, profile_path, original_name, character }) => (
+      {castInfo.length>0? castInfo.map(({ id, profile_path, original_name, character }) => (
         <li key={id}>
           <img
             src={
@@ -32,7 +32,7 @@ const Cast = () => {
           <p>{original_name}</p>
           <p>Character: {character}</p>
         </li>
-      ))}
+      )):`Sorry! There is no Info about the cast here at this moment. try again Later`}
     </div>
   );
 };

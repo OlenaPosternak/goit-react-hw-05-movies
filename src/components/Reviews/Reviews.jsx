@@ -24,7 +24,7 @@ const Reviews = () => {
               <p>{content}</p>
             </ListItem>
           ))
-        : 'There is now reviews here yet'}
+        : 'There are no reviews here yet. Try again later!'}
     </div>
   );
 };
