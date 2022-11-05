@@ -1,10 +1,9 @@
-export const SearchForm = ({ onSearch, value }) => {
+export const SearchForm = ({ onSearch }) => {
   const handelSubmit = event => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const searchValue = form.elements.searchMovie.value;
-    console.log(searchValue);
 
     if (searchValue.trim() === ``) {
       return;
@@ -16,10 +15,7 @@ export const SearchForm = ({ onSearch, value }) => {
 
   return (
     <form action="submit" onSubmit={handelSubmit}>
-      <input
-        type="text"
-        name="searchMovie"
-      />
+      <input type="text" name="searchMovie" />
       <button>Search</button>
     </form>
   );

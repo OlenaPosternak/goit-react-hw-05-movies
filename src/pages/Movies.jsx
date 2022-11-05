@@ -19,7 +19,6 @@ const Movies = () => {
   }, [movieName]);
 
   const onSubmitSerach = name => {
-    console.log(name)
     setFilms([]);
 
     const nextParams = name !== '' ? { name } : {};
@@ -28,7 +27,7 @@ const Movies = () => {
 
   return (
     <>
-      <SearchForm value={movieName} onSearch={onSubmitSerach} />
+      <SearchForm  onSearch={onSubmitSerach} />
       <Link state={{ from: `/movies/${searchParams}` }}>
         <SearchedMovies listOFfilms={films} state={{ from: location }} />
       </Link>
