@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import {ListItem} from './Reviews.styled'
 
 
-export const Reviews = () => {
+const Reviews = () => {
   const { id } = useParams();
   const [allReviews, setAllReviews] = useState([]);
 
@@ -27,3 +27,5 @@ export const Reviews = () => {
     </div>
   );
 };
+
+export default Reviews;

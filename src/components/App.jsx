@@ -1,10 +1,15 @@
+import { lazy } from 'react';
+
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
 import { MovieInfo } from '../pages/MovieDetails';
-import { Cast } from '../components/Cast/Cast';
-import { Reviews } from '../components/Reviews/Reviews';
+// import { Cast } from '../components/Cast/Cast';
+// import { Reviews } from '../components/Reviews/Reviews';
 import { Container, HeaderNav, HeaderLinks, Line } from './App.styled';
+
+const Reviews = lazy(() => import('../components/Reviews/Reviews'));
+const Cast = lazy(() => import('../components/Cast/Cast'));
 
 export const App = () => {
   return (
@@ -15,7 +20,7 @@ export const App = () => {
             <div role="img" aria-label="Popcorn">
               🍿
             </div>{' '}
-           <p>Home</p> 
+            <p>Home</p>
           </HeaderLinks>
           <HeaderLinks to="/movies">Movies</HeaderLinks>
         </HeaderNav>

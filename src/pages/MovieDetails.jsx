@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieByID } from '../fetchAPI';
@@ -71,7 +73,9 @@ export const MovieInfo = () => {
      
         <Line />
       </div>
-      <Outlet />
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 };

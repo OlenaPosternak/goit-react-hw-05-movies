@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [castInfo, setCastInfo] = useState([]);
 
@@ -30,10 +30,4 @@ export const Cast = () => {
   );
 };
 
-// {trendingMovies.map(movie => (
-//     <TrendMovie key={movie.id}>
-//     <Link to={`movies/${movie.id}`} state={state}>
-//       <p>{movie.title}</p>
-//     </Link>
-//   </TrendMovie>
-// ))}
+export default Cast;
