@@ -1,3 +1,5 @@
+import {Form, Input, SearchBtn} from './Search.styled';
+
 export const SearchForm = ({ onSearch }) => {
   const handelSubmit = event => {
     event.preventDefault();
@@ -14,9 +16,9 @@ export const SearchForm = ({ onSearch }) => {
   };
 
   return (
-    <form action="submit" onSubmit={handelSubmit}>
-      <input type="text" name="searchMovie" />
-      <button>Search</button>
-    </form>
+    <Form action="submit" onSubmit={handelSubmit}>
+      <Input type="text" name="searchMovie" />
+      <SearchBtn>Search</SearchBtn>
+    </Form>
   );
 };
