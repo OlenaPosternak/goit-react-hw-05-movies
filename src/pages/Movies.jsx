@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { SearchForm } from '../components/SerchForm/Search';
 import { SearchedMovies } from '../components/ListOfSearchedMovies/ListOfSearchedMovies';
 import { fetchFilteredMovies } from '../fetchAPI';
@@ -28,9 +30,13 @@ const Movies = () => {
   return (
     <>
       <SearchForm onSearch={onSubmitSerach} />
+      <Suspense fallback={<div>Loading subpage...</div>}>
       <Link state={{ from: `/movies/${searchParams}` }}>
         <SearchedMovies listOFfilms={films} state={{ from: location }} />
       </Link>
+      
+        
+      </Suspense>
     </>
   );
 };
