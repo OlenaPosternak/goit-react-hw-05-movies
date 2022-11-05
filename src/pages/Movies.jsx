@@ -4,8 +4,6 @@ import { fetchFilteredMovies } from '../fetchAPI';
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
-
-
 const Movies = () => {
   const [films, setFilms] = useState([]);
 
@@ -29,7 +27,7 @@ const Movies = () => {
 
   return (
     <>
-      <SearchForm  onSearch={onSubmitSerach} />
+      <SearchForm onSearch={onSubmitSerach} />
       <Link state={{ from: `/movies/${searchParams}` }}>
         <SearchedMovies listOFfilms={films} state={{ from: location }} />
       </Link>

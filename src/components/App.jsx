@@ -4,8 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
 import { MovieInfo } from '../pages/MovieDetails';
-// import { Cast } from '../components/Cast/Cast';
-// import { Reviews } from '../components/Reviews/Reviews';
+
 import { Container, HeaderNav, HeaderLinks, Line } from './App.styled';
 
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));

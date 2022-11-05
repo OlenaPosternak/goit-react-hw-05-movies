@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense } from 'react';
 
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -6,9 +6,8 @@ import { getMovieByID } from '../fetchAPI';
 
 import { Container, MainInfo, Line, BackButton } from './MovieDetails.styled';
 
-import { TiStarFullOutline } from "react-icons/ti";
-import { BiBody } from "react-icons/bi";
-
+import { TiStarFullOutline } from 'react-icons/ti';
+import { BiBody } from 'react-icons/bi';
 
 export const MovieInfo = () => {
   const { id } = useParams();
@@ -63,14 +62,19 @@ export const MovieInfo = () => {
       <div>
         <h3>Additional Information</h3>
         <ul>
-        <li>
-          <Link to="cast"><BiBody size="16px"/> Cast </Link>
-        </li>
-        <li>
-          <Link to="reviews"> <TiStarFullOutline size="16px" /> Reviews </Link>
-        </li>
+          <li>
+            <Link to="cast">
+              <BiBody size="16px" /> Cast{' '}
+            </Link>
+          </li>
+          <li>
+            <Link to="reviews">
+              {' '}
+              <TiStarFullOutline size="16px" /> Reviews{' '}
+            </Link>
+          </li>
         </ul>
-     
+
         <Line />
       </div>
       <Suspense fallback={<div>Loading subpage...</div>}>

@@ -41,7 +41,6 @@ export async function getMovieByID(id) {
     });
 }
 
-
 export async function getCastByID(id) {
   return await fetch(
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
@@ -55,15 +54,15 @@ export async function getCastByID(id) {
 }
 
 export async function getReviewsByID(id) {
-    return await fetch(
-      `
+  return await fetch(
+    `
       https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
-    )
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data)
-        return data;
-      });
-  }
+  )
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      return data;
+    });
+}
