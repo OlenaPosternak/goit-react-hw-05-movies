@@ -12,7 +12,7 @@ const Cast = () => {
     if (castInfo !== []) {
       getCastByID(id).then(data => setCastInfo(data.cast));
     }
-  },[]);
+  },[castInfo, id]);
 
   console.log(`castInfo`, castInfo);
 

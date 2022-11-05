@@ -1,4 +1,4 @@
-import {Form, Input, SearchBtn} from './Search.styled';
+import { Form, Input, SearchBtn } from './Search.styled';
 
 export const SearchForm = ({ onSearch }) => {
   const handelSubmit = event => {

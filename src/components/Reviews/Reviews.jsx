@@ -13,7 +13,7 @@ const Reviews = () => {
     if (allReviews !== []) {
       getReviewsByID(id).then(data => setAllReviews(data.results));
     }
-  }, []);
+  }, [allReviews, id]);
 
   return (
     <div>
