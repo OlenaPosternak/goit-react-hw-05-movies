@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import { TrendMovie } from './Trendings.styled';
+import { TrendMovie, Container } from './Trendings.styled';
 
 const Trendings = ({ trendingMovies, state }) => {
   return (
-    <div>
+    <Container>
       {trendingMovies.map(movie => (
         <TrendMovie key={movie.id}>
           <Link to={`movies/${movie.id}`} state={state}>
@@ -12,7 +12,7 @@ const Trendings = ({ trendingMovies, state }) => {
           </Link>
         </TrendMovie>
       ))}
-    </div>
+    </Container>
   );
 };
 

@@ -1,27 +1,25 @@
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
 import { MovieInfo } from '../pages/MovieDetails';
 import { Cast } from '../components/Cast/Cast';
-import {Reviews} from '../components/Reviews/Reviews';
-import { Container, HeaderNav } from './App.styled';
+import { Reviews } from '../components/Reviews/Reviews';
+import { Container, HeaderNav, HeaderLinks, Line } from './App.styled';
 
 export const App = () => {
   return (
     <>
       <Container>
-        <div>
-          <span role="img" aria-label="Popcorn">
-            🍿
-          </span>{' '}
-          Movies
-        </div>
         <HeaderNav>
-          <NavLink to="/" end>
-            Home
-          </NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+          <HeaderLinks to="/" end>
+            <div role="img" aria-label="Popcorn">
+              🍿
+            </div>{' '}
+           <p>Home</p> 
+          </HeaderLinks>
+          <HeaderLinks to="/movies">Movies</HeaderLinks>
         </HeaderNav>
+        <Line />
       </Container>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -4,6 +4,8 @@ import { fetchFilteredMovies } from '../fetchAPI';
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
+
+
 const Movies = () => {
   const [films, setFilms] = useState([]);
 
