@@ -2,7 +2,6 @@ import { lazy } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-// import Movies from '../pages/Movies';
 import { MovieInfo } from '../pages/MovieDetails';
 
 import { Container, HeaderNav, HeaderLinks, Line } from './App.styled';
@@ -29,7 +28,6 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-        {/* <Route path="/movies/:id" element={<MovieInfo/>} /> */}
         <Route path="/movies/:id" element={<MovieInfo />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />

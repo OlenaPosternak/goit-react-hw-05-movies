@@ -31,11 +31,9 @@ const Movies = () => {
     <>
       <SearchForm onSearch={onSubmitSerach} />
       <Suspense fallback={<div>Loading subpage...</div>}>
-      <Link state={{ from: `/movies/${searchParams}` }}>
-        <SearchedMovies listOFfilms={films} state={{ from: location }} />
-      </Link>
-      
-        
+        <Link state={{ from: `/movies/${searchParams}` }}>
+          <SearchedMovies listOFfilms={films} state={{ from: location }} />
+        </Link>
       </Suspense>
     </>
   );
