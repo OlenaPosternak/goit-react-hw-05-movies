@@ -63,12 +63,12 @@ export const MovieInfo = () => {
         <h3>Additional Information</h3>
         <ul>
           <li>
-            <Link to="cast">
+            <Link to="cast" state={{ from: location }}>
               <BiBody size="16px" /> Cast{' '}
             </Link>
           </li>
           <li>
-            <Link to="reviews">
+            <Link to="reviews" state={{ from: location }}>
               {' '}
               <TiStarFullOutline size="16px" /> Reviews{' '}
             </Link>

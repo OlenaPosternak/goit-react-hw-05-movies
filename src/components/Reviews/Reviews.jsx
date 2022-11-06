@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
+
 import { getReviewsByID } from '../../fetchAPI';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ListItem } from './Reviews.styled';
 
-const Reviews = () => {
+const Reviews = ({ state }) => {
   const { id } = useParams();
   const [allReviews, setAllReviews] = useState([]);
 
@@ -27,6 +29,10 @@ const Reviews = () => {
         : 'There are no reviews here yet. Try again later!'}
     </div>
   );
+};
+
+Reviews.propTypes = {
+  state: PropTypes.object,
 };
 
 export default Reviews;
