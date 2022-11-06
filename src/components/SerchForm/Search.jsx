@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Form, Input, SearchBtn } from './Search.styled';
 
 export const SearchForm = ({ onSearch }) => {
@@ -21,4 +23,8 @@ export const SearchForm = ({ onSearch }) => {
       <SearchBtn>Search</SearchBtn>
     </Form>
   );
+};
+
+SearchForm.propTypes = {
+  onSearch: PropTypes.func,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { TrendMovie, Container } from './Trendings.styled';
@@ -16,4 +17,8 @@ const Trendings = ({ trendingMovies, state }) => {
   );
 };
 
+Trendings.propTypes = {
+  trendingMovies: PropTypes.arrayOf(PropTypes.object),
+  state: PropTypes.object,
+};
 export default Trendings;

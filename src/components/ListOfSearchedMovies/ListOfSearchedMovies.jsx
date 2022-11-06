@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const SearchedMovies = ({ listOFfilms, state }) => {
   return (
@@ -12,4 +13,9 @@ export const SearchedMovies = ({ listOFfilms, state }) => {
       ))}
     </ul>
   );
+};
+
+SearchedMovies.propTypes = {
+  listOFfilms: PropTypes.arrayOf(PropTypes.object),
+  state: PropTypes.object,
 };

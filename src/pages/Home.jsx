@@ -2,6 +2,7 @@ import { fetchTrending } from 'fetchAPI';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Trendings from '../components/Trendings/Trendings';
+
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
