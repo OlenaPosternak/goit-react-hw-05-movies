@@ -32,10 +32,8 @@ export const App = () => {
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Routes>
           <Route path="/*" element={<Home />} />
-
           <Route path="movies" element={<Movies />} />
-
-          <Route path="movies/:id" element={<MovieInfo />}>
+         <Route path="movies/:id" element={<MovieInfo />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
