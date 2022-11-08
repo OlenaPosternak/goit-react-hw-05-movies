@@ -1,7 +1,5 @@
 const API_KEY = '457f80f59e5c5ed289022502f172a9f5';
 
-// Приклад https://api.themoviedb.org/3/movie/550?api_key=457f80f59e5c5ed289022502f172a9f5
-
 // Робота с backend
 
 export async function fetchTrending() {
@@ -62,7 +60,6 @@ export async function getReviewsByID(id) {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       return data;
     });
 }

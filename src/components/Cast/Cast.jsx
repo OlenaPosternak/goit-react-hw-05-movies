@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { getCastByID } from '../../fetchAPI';
 import { useParams } from 'react-router-dom';
 
+import { Container, Actor } from './Cast.styled';
+
 const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
 
 const Cast = ({ state }) => {
@@ -16,13 +18,11 @@ const Cast = ({ state }) => {
     }
   }, [castInfo, id]);
 
-  console.log(`castInfo`, castInfo);
-
   return (
-    <div>
+    <Container>
       {castInfo.length > 0
         ? castInfo.map(({ id, profile_path, original_name, character }) => (
-            <li key={id}>
+            <Actor key={id}>
               <img
                 src={
                   profile_path
@@ -34,10 +34,10 @@ const Cast = ({ state }) => {
               />
               <p>{original_name}</p>
               <p>Character: {character}</p>
-            </li>
+            </Actor>
           ))
         : `Sorry! There is no Info about the cast here at this moment. try again Later`}
-    </div>
+    </Container>
   );
 };
 

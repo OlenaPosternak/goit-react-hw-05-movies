@@ -1,10 +1,10 @@
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 import { SearchForm } from '../components/SerchForm/Search';
 import { SearchedMovies } from '../components/ListOfSearchedMovies/ListOfSearchedMovies';
 import { fetchFilteredMovies } from '../fetchAPI';
-import { useState, useEffect } from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { Loader } from '../components/Loader';
 
 const Movies = () => {
   const [films, setFilms] = useState([]);
@@ -29,12 +29,12 @@ const Movies = () => {
 
   return (
     <>
-    <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense fallback={<Loader />}>
         <SearchForm onSearch={onSubmitSerach} />
         <Link state={{ from: `/movies/${searchParams}` }}>
           <SearchedMovies listOFfilms={films} state={{ from: location }} />
         </Link>
-        </Suspense>
+      </Suspense>
     </>
   );
 };

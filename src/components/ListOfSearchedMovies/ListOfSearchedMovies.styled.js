@@ -1,14 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-  padding: 20px;
-`;
-
-export const TrendMovie = styled.li`
-  list-style: none;
-`;
-
 export const FilmLink = styled(Link)`
   text-decoration: none;
   font-size: 24px;
@@ -23,4 +15,8 @@ export const FilmLink = styled(Link)`
     color: white;
     border-radius: 4px;
   }
+`;
+
+export const FilmItem = styled.li`
+  list-style: none;
 `;

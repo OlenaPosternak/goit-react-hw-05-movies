@@ -19,7 +19,7 @@ export const SearchForm = ({ onSearch }) => {
 
   return (
     <Form action="submit" onSubmit={handelSubmit}>
-      <Input type="text" name="searchMovie" />
+      <Input type="text" name="searchMovie" placeholder="Search film" />
       <SearchBtn>Search</SearchBtn>
     </Form>
   );

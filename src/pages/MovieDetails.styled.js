@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   padding: 20px;
@@ -6,10 +7,13 @@ export const Container = styled.div`
 
 export const MainInfo = styled.div`
   display: flex;
-  gap: 20px;
-  width: 900px;
+  gap: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
+`;
+
+export const MovieDescripton = styled.div`
+  padding-right: 20px;
 `;
 
 export const Line = styled.div`
@@ -28,4 +32,21 @@ export const BackButton = styled.button`
   background-color: teal;
   font-size: 16px;
   color: white;
+`;
+
+export const AdditionalInfoItem = styled.li`
+  margin-bottom: 10px;
+`;
+
+export const AdditionalInfoLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+
+  :hover,
+  :focus {
+    background-color: teal;
+    color: white;
+    border-radius: 4px;
+  }
 `;

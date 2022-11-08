@@ -4,10 +4,19 @@ import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieByID } from '../fetchAPI';
 
-import { Container, MainInfo, Line, BackButton } from './MovieDetails.styled';
+import {
+  Container,
+  MainInfo,
+  MovieDescripton,
+  Line,
+  BackButton,
+  AdditionalInfoItem,
+  AdditionalInfoLink,
+} from './MovieDetails.styled';
 
 import { TiStarFullOutline } from 'react-icons/ti';
 import { BiBody } from 'react-icons/bi';
+import { Loader } from 'components/Loader';
 
 export const MovieInfo = () => {
   const { id } = useParams();
@@ -15,7 +24,7 @@ export const MovieInfo = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
-   const [genres, setGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
   const [picture, setPicture] = useState('');
   const [movie, setMovie] = useState([]);
 
@@ -40,7 +49,7 @@ export const MovieInfo = () => {
           alt={title}
           width="200"
         />
-        <div>
+        <MovieDescripton>
           <h1>
             {title}({release_date && release_date.slice(0, 4)})
           </h1>
@@ -56,28 +65,28 @@ export const MovieInfo = () => {
                 <span>{gen.name}</span>
               </span>
             ))}
-        </div>
+        </MovieDescripton>
       </MainInfo>
       <Line />
       <div>
         <h3>Additional Information</h3>
         <ul>
-          <li>
-            <Link to="cast" state={location.state}>
+          <AdditionalInfoItem>
+            <AdditionalInfoLink to="cast" state={location.state}>
               <BiBody size="16px" /> Cast{' '}
-            </Link>
-          </li>
-          <li>
-            <Link to="reviews" state={location.state}>
+            </AdditionalInfoLink>
+          </AdditionalInfoItem>
+          <AdditionalInfoItem>
+            <AdditionalInfoLink to="reviews" state={location.state}>
               {' '}
               <TiStarFullOutline size="16px" /> Reviews{' '}
-            </Link>
-          </li>
+            </AdditionalInfoLink>
+          </AdditionalInfoItem>
         </ul>
 
         <Line />
       </div>
-      <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </Container>

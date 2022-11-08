@@ -4,11 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import { MovieInfo } from '../pages/MovieDetails';
 
-import { Container, HeaderNav, HeaderLinks, Line } from './App.styled';
-
-// import Reviews from '../components/Reviews/Reviews';
-// import Cast from '../components/Cast/Cast';
-// import Movies from '../pages/Movies';
+import { Container, Header, HeaderNav, HeaderLinks, Line } from './App.styled';
 
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 const Cast = lazy(() => import('../components/Cast/Cast'));
@@ -16,8 +12,8 @@ const Movies = lazy(() => import('../pages/Movies'));
 
 export const App = () => {
   return (
-    <>
-      <Container>
+    <Container>
+      <Header>
         <HeaderNav>
           <HeaderLinks to="/" end>
             <div role="img" aria-label="Popcorn">
@@ -28,17 +24,17 @@ export const App = () => {
           <HeaderLinks to="/movies">Movies</HeaderLinks>
         </HeaderNav>
         <Line />
-      </Container>
+      </Header>
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="movies" element={<Movies />} />
-         <Route path="movies/:id" element={<MovieInfo />}>
+          <Route path="movies/:id" element={<MovieInfo />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
       </Suspense>
-    </>
+    </Container>
   );
 };

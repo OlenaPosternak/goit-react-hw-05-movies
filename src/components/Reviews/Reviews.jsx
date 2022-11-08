@@ -4,7 +4,7 @@ import { getReviewsByID } from '../../fetchAPI';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ListItem } from './Reviews.styled';
+import { ListItem, Container, Author } from './Reviews.styled';
 
 const Reviews = ({ state }) => {
   const { id } = useParams();
@@ -17,17 +17,17 @@ const Reviews = ({ state }) => {
   }, [allReviews, id]);
 
   return (
-    <div>
-      <h3>Reviews </h3>
+    <Container>
+      <h3>{allReviews.length > 0 && `Reviews:`} </h3>
       {allReviews.length > 0
         ? allReviews.map(({ author, content, id }) => (
             <ListItem key={id}>
-              <p>Author: {author}</p>
+              <Author>Author: {author}</Author>
               <p>{content}</p>
             </ListItem>
           ))
         : 'There are no reviews here yet. Try again later!'}
-    </div>
+    </Container>
   );
 };
 
