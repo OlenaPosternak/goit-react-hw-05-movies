@@ -18,6 +18,8 @@ import { TiStarFullOutline } from 'react-icons/ti';
 import { BiBody } from 'react-icons/bi';
 import { Loader } from 'components/Loader';
 
+const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
+
 export const MovieInfo = () => {
   const { id } = useParams();
 
@@ -45,7 +47,7 @@ export const MovieInfo = () => {
       </Link>
       <MainInfo>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${picture}`}
+          src={picture?`https://image.tmdb.org/t/p/w500/${picture}`:`${IMG}`}
           alt={title}
           width="200"
         />

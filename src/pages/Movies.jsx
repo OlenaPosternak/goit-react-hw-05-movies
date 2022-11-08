@@ -2,7 +2,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 import { SearchForm } from '../components/SerchForm/Search';
-import { SearchedMovies } from '../components/ListOfSearchedMovies/ListOfSearchedMovies';
+import { SearchedMovies } from '../components/SearchedMovies/SearchedMovies';
 import { fetchFilteredMovies } from '../fetchAPI';
 import { Loader } from '../components/Loader';
 

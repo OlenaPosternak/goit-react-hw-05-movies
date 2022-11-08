@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { FilmLink, FilmItem } from './ListOfSearchedMovies.styled';
+import { FilmLink, FilmItem } from './SearchedMovies.styled';
 
 export const SearchedMovies = ({ listOFfilms, state }) => {
   return (
     <ul>
-      {listOFfilms.map(film => (
-        <FilmItem key={film.id}>
-          <FilmLink to={`${film.id}`} state={state}>
-            <p>{film.title}</p>
+      {listOFfilms.map(({id, title}) => (
+        <FilmItem key={id}>
+          <FilmLink to={`${id}`} state={state}>
+            <p>{title}</p>
           </FilmLink>
         </FilmItem>
       ))}
