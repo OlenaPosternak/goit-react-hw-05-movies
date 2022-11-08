@@ -18,7 +18,7 @@ const Trendings = ({ trendingMovies, state }) => {
 Trendings.propTypes = {
   trendingMovies: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       title: PropTypes.string,
     })
   ),

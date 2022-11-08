@@ -18,7 +18,7 @@ export const SearchedMovies = ({ listOFfilms, state }) => {
 SearchedMovies.propTypes = {
   listOFfilms: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       title: PropTypes.string,
     })
   ),

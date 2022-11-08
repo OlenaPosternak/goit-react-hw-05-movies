@@ -24,6 +24,10 @@ export const MovieInfo = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
+  console.log(`location`, location)
+  console.log(`location.state`,location.state)
+  console.log(`location.state.from`,location.state?.from)
+
   const [genres, setGenres] = useState([]);
   const [picture, setPicture] = useState('');
   const [movie, setMovie] = useState([]);
