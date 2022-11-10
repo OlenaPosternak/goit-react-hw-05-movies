@@ -23,6 +23,8 @@ const Movies = () => {
   //     }
   //   }, [movieName]);
 
+
+  
   useEffect(() => {
     if (movieName !== ``) {
       async function filterMovies() {
