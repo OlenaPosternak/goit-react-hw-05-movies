@@ -84,7 +84,7 @@ export const MovieInfo = () => {
               <h2>Overview</h2>
               <p>{movie.overview}</p>
               <h2>Genres</h2>
-              {genres !== [] &&
+              {genres.length !== 0 &&
                 genres.map(gen => (
                   <span key={gen.id}>
                     {' '}
