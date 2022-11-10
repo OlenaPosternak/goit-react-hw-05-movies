@@ -13,9 +13,14 @@ const Cast = ({ state }) => {
   const [castInfo, setCastInfo] = useState([]);
 
   useEffect(() => {
-    if (castInfo !== []) {
-      getCastByID(id).then(data => setCastInfo(data.cast));
+    async function getCast() {
+      try {
+        getCastByID(id).then(data => setCastInfo(data.cast));
+      } catch (error) {
+        console.log(error);
+      }
     }
+    getCast();
   }, [castInfo, id]);
 
   return (

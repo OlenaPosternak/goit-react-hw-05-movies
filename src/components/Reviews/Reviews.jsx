@@ -11,9 +11,14 @@ const Reviews = ({ state }) => {
   const [allReviews, setAllReviews] = useState([]);
 
   useEffect(() => {
-    if (allReviews !== []) {
-      getReviewsByID(id).then(data => setAllReviews(data.results));
+    async function getReviews() {
+      try {
+        getReviewsByID(id).then(data => setAllReviews(data.results));
+      } catch (error) {
+        console.log(error);
+      }
     }
+    getReviews();
   }, [allReviews, id]);
 
   return (

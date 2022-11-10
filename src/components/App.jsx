@@ -26,7 +26,7 @@ export const App = () => {
         </HeaderNav>
         <Line />
       </Header>
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="movies" element={<Movies />} />

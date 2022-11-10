@@ -17,21 +17,13 @@ const Movies = () => {
 
   const location = useLocation();
 
-  //   useEffect(() => {
-  //     if (movieName !== ``) {
-  //       fetchFilteredMovies(movieName).then(data => setFilms(data));
-  //     }
-  //   }, [movieName]);
-
-
-  
   useEffect(() => {
     if (movieName !== ``) {
       async function filterMovies() {
         try {
           fetchFilteredMovies(movieName).then(data => {
             if (data.results.length === 0) {
-              toast.warn('Please try another word for request!', {
+              toast.warn('Please try another movie name!', {
                 theme: 'dark',
               });
             }

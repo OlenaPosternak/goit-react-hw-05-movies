@@ -4,7 +4,7 @@ import { FilmLink, FilmItem } from './SearchedMovies.styled';
 export const SearchedMovies = ({ listOFfilms, state }) => {
   return (
     <ul>
-      {listOFfilms.map(({id, title}) => (
+      {listOFfilms.map(({ id, title }) => (
         <FilmItem key={id}>
           <FilmLink to={`${id}`} state={state}>
             <p>{title}</p>

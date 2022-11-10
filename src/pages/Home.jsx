@@ -10,10 +10,6 @@ const Home = () => {
 
   const location = useLocation();
 
-  //   useEffect(() => {
-  //     fetchTrending().then(data => setTrendingMovies(data));
-  //   }, []);
-
   useEffect(() => {
     async function getTrendings() {
       try {
