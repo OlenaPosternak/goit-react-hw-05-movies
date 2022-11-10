@@ -4,7 +4,7 @@ import { TrendMovie, Container, FilmLink } from './Trendings.styled';
 const Trendings = ({ trendingMovies, state }) => {
   return (
     <Container>
-      {trendingMovies.map(({id, title}) => (
+      {trendingMovies.map(({ id, title }) => (
         <TrendMovie key={id}>
           <FilmLink to={`movies/${id}`} state={state}>
             <p>{title}</p>

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import { Form, Input, SearchBtn } from './Search.styled';
 
 export const SearchForm = ({ onSearch }) => {
@@ -14,7 +13,7 @@ export const SearchForm = ({ onSearch }) => {
     }
 
     onSearch(searchValue);
-    form.reset();
+    // form.reset();  - використати, якщо необхідно очистити інпут
   };
 
   return (

@@ -6,6 +6,9 @@ import { SearchedMovies } from '../components/SearchedMovies/SearchedMovies';
 import { fetchFilteredMovies } from '../fetchAPI';
 import { Loader } from '../components/Loader';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Movies = () => {
   const [films, setFilms] = useState([]);
 
@@ -14,9 +17,29 @@ const Movies = () => {
 
   const location = useLocation();
 
+  //   useEffect(() => {
+  //     if (movieName !== ``) {
+  //       fetchFilteredMovies(movieName).then(data => setFilms(data));
+  //     }
+  //   }, [movieName]);
+
   useEffect(() => {
     if (movieName !== ``) {
-      fetchFilteredMovies(movieName).then(data => setFilms(data));
+      async function filterMovies() {
+        try {
+          fetchFilteredMovies(movieName).then(data => {
+            if (data.results.length === 0) {
+              toast.warn('Please try another word for request!', {
+                theme: 'dark',
+              });
+            }
+            setFilms(data.results);
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      filterMovies();
     }
   }, [movieName]);
 
@@ -34,6 +57,7 @@ const Movies = () => {
         <Link state={{ from: `/movies/${searchParams}` }}>
           <SearchedMovies listOFfilms={films} state={{ from: location }} />
         </Link>
+        <ToastContainer autoClose={3000} closeOnClick />
       </Suspense>
     </>
   );

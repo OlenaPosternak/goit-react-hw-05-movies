@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import { MovieInfo } from '../pages/MovieDetails';
+import { Loader } from './Loader';
 
 import { Container, Header, HeaderNav, HeaderLinks, Line } from './App.styled';
 
@@ -25,7 +26,7 @@ export const App = () => {
         </HeaderNav>
         <Line />
       </Header>
-      <Suspense fallback={<div>Loading subpage...</div>}>
+      <Suspense fallback={<Loader/>}>
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="movies" element={<Movies />} />
