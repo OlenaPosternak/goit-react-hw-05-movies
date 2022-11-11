@@ -23,7 +23,7 @@ import { Loader } from 'components/Loader';
 
 const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
 
-export const MovieInfo = () => {
+const MovieInfo =()=> {
   const { id } = useParams();
 
   const location = useLocation();
@@ -125,3 +125,5 @@ export const MovieInfo = () => {
     </Container>
   );
 };
+
+export default MovieInfo;
