@@ -1,8 +1,6 @@
 import { lazy, Suspense } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
-import { MovieInfo } from '../pages/MovieDetails';
 import { Loader } from './Loader';
 
 import { Container, Header, HeaderNav, HeaderLinks, Line } from './App.styled';
@@ -10,6 +8,9 @@ import { Container, Header, HeaderNav, HeaderLinks, Line } from './App.styled';
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 const Cast = lazy(() => import('../components/Cast/Cast'));
 const Movies = lazy(() => import('../pages/Movies'));
+const Home = lazy(() => import('../pages/Home'));
+const MovieInfo = lazy(() => import('../pages/MovieDetails'));
+
 
 export const App = () => {
   return (

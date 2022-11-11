@@ -1,17 +1,32 @@
 import PropTypes from 'prop-types';
-import { FilmLink, FilmItem } from './SearchedMovies.styled';
+import { Suspense } from 'react';
+import { FilmLink, FilmItem, Image, Container } from './SearchedMovies.styled';
+import { Loader } from 'components/Loader';
+
+const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
 
 export const SearchedMovies = ({ listOFfilms, state }) => {
   return (
-    <ul>
-      {listOFfilms.map(({ id, title }) => (
-        <FilmItem key={id}>
-          <FilmLink to={`${id}`} state={state}>
-            <p>{title}</p>
-          </FilmLink>
-        </FilmItem>
-      ))}
-    </ul>
+    <Suspense fallback={<Loader />}>
+      <Container>
+        {listOFfilms.map(({ id, title, poster_path }) => (
+          <FilmItem key={id}>
+            <FilmLink to={`${id}`} state={state}>
+              <Image
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                    : `${IMG}`
+                }
+                alt={title}
+                width="200"
+              />
+              <p>{title}</p>
+            </FilmLink>
+          </FilmItem>
+        ))}
+      </Container>
+    </Suspense>
   );
 };
 
