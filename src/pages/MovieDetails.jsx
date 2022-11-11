@@ -12,6 +12,7 @@ import {
   BackButton,
   AdditionalInfoItem,
   AdditionalInfoLink,
+  SmallContainer
 } from './MovieDetails.styled';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -72,7 +73,7 @@ const MovieInfo =()=> {
                   : `${IMG}`
               }
               alt={movie.title}
-              width="200"
+              width="350"
             />
             <MovieDescripton>
               <h1>
@@ -94,7 +95,7 @@ const MovieInfo =()=> {
             </MovieDescripton>
           </MainInfo>
           <Line />
-          <div>
+          <SmallContainer>
             <h3>Additional Information</h3>
             <ul>
               <AdditionalInfoItem>
@@ -111,7 +112,7 @@ const MovieInfo =()=> {
             </ul>
 
             <Line />
-          </div>
+          </SmallContainer>
         </>
       ) : (
         <div>

@@ -5,6 +5,9 @@ export const Container = styled.div`
   padding: 20px;
 `;
 
+export const SmallContainer=styled.div`
+text-align:center;`
+
 export const MainInfo = styled.div`
   display: flex;
   gap: 40px;
@@ -36,6 +39,7 @@ export const BackButton = styled.button`
 
 export const AdditionalInfoItem = styled.li`
   margin-bottom: 10px;
+  list-style: none;
 `;
 
 export const AdditionalInfoLink = styled(Link)`
