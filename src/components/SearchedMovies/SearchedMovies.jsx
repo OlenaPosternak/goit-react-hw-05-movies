@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import { Suspense } from 'react';
 import { FilmLink, FilmItem, Image, Container } from './SearchedMovies.styled';
-import { Loader } from 'components/Loader';
 
 const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.png`;
 
