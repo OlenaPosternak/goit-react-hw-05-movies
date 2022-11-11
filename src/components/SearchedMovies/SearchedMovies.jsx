@@ -7,7 +7,6 @@ const IMG = `https://cdn.pixabay.com/photo/2021/12/29/17/34/girl-6902365_1280.pn
 
 export const SearchedMovies = ({ listOFfilms, state }) => {
   return (
-    <Suspense fallback={<Loader />}>
       <Container>
         {listOFfilms.map(({ id, title, poster_path }) => (
           <FilmItem key={id}>
@@ -26,7 +25,6 @@ export const SearchedMovies = ({ listOFfilms, state }) => {
           </FilmItem>
         ))}
       </Container>
-    </Suspense>
   );
 };
 
