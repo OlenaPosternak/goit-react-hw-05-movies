@@ -13,6 +13,7 @@ export const SearchForm = ({ onSearch }) => {
     }
 
     onSearch(searchValue);
+
     // form.reset();  - використати, якщо необхідно очистити інпут
   };
 

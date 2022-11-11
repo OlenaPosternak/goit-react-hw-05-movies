@@ -38,7 +38,9 @@ const Movies = () => {
   }, [movieName]);
 
   const onSubmitSerach = name => {
-    setFilms([]);
+    if (name !== movieName) {
+      setFilms([]);
+    }
 
     const nextParams = name !== '' ? { name } : {};
     setSearchParams(nextParams);
